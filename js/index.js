@@ -22,21 +22,22 @@ function ready() {
 }
 
 const onClickMenuBtn = (event) => {
-    const mobileHeader = document.getElementsByClassName('mobile-header');
-    const desktopHeader = document.getElementsByClassName('desktop-header');
-    const mainContent = document.getElementsByClassName('content');
-    if (event.target.classList.contains('ion-navicon-round')) {
-        desktopHeader[0].classList.add('open');
-        mainContent[0].classList.add('open');
-        mobileHeader[0].classList.add('open');
-        event.target.classList.remove('ion-navicon-round');
-        event.target.classList.add('ion-close-round');
+    const classList = event.target.classList;
+    const mobileHeader = document.getElementsByClassName('mobile-header')[0];
+    const desktopHeader = document.getElementsByClassName('desktop-header')[0];
+    const mainContent = document.getElementsByClassName('content')[0];
+    if (classList.contains('ion-navicon-round')) {
+        desktopHeader.classList.add('open');
+        mainContent.classList.add('open');
+        mobileHeader.classList.add('open');
+        classList.remove('ion-navicon-round');
+        classList.add('ion-close-round');
     } else {
-        desktopHeader[0].classList.remove('open');
-        mainContent[0].classList.remove('open');
-        mobileHeader[0].classList.remove('open');
-        event.target.classList.add('ion-navicon-round');
-        event.target.classList.remove('ion-close-round');
+        desktopHeader.classList.remove('open');
+        mainContent.classList.remove('open');
+        mobileHeader.classList.remove('open');
+        classList.add('ion-navicon-round');
+        classList.remove('ion-close-round');
     }
 }
 
